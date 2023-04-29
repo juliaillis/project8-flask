@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if not past_orders %}
+    <p>No orders have been made yet.</p>
+  {% else %}
+    <h1>Past Orders</h1>
+    <ul>
+      {% for order in past_orders %}
+        <li>{{ order.date }} - {{ order.total }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
